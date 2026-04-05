@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushant Radium House</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(120deg,#ffffff,#fff5f5);
+  color:#222;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#ff1a1a,#b30000);
+  color:white;
+  animation:fadeIn 1.2s ease;
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+header h1{
+  font-size:48px;
+  letter-spacing:2px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+header p{
+  margin-top:10px;
+  opacity:0.9;
+  font-size:18px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  animation:slideUp 1s ease;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  border-radius:20px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+.hero h2{
+  font-size:28px;
+  color:#b30000;
+}
+.hero p{
+  margin-top:10px;
+  color:#555;
+  font-size:16px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  font-size:26px;
+  margin:50px 0 25px;
+  color:#b30000;
+  position: relative;
+}
+.section-title::after{
+  content:"";
+  width:60px;
+  height:3px;
+  background:#b30000;
+  display:block;
+  margin:8px auto 0;
+  border-radius:2px;
+}
+
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:0 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+  padding:25px 20px;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(255,0,0,0.1);
+  transition:0.4s;
+  animation:fadeUp 1s ease;
+}
+.card i{
+  font-size:32px;
+  color:#b30000;
+  margin-bottom:15px;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 20px 40px rgba(255,0,0,0.3);
+  background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(255,200,200,0.7));
+  border-color: rgba(255,0,0,0.2);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  padding:50px 20px;
+  animation:fadeUp 1.2s ease;
+}
+.contact p, .contact a{
+  display:inline-block;
+  margin:10px 15px;
+  font-size:16px;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:14px 28px;
+  background:linear-gradient(135deg,#ff1a1a,#b30000);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 25px rgba(255,0,0,0.3);
+}
+
+/* FORM */
+.form{
+  text-align:center;
+  padding:40px 20px;
+}
+input,textarea{
+  width:90%;
+  max-width:500px;
+  padding:14px;
+  margin:8px 0;
+  border-radius:12px;
+  border:1px solid #ddd;
+  transition:0.3s;
+}
+input:focus, textarea:focus{
+  border:2px solid #b30000;
+  outline:none;
+  transform: scale(1.02);
+}
+button{
+  padding:14px 30px;
+  background:#ff1a1a;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  background:#b30000;
+  transform:scale(1.05);
+}
+
+/* FLOAT BUTTONS */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:16px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+.book{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  background:#ff1a1a;
+  color:white;
+  padding:12px 28px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header h1{
+    font-size:36px;
+  }
+  .hero h2{
+    font-size:22px;
+  }
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>SUSHANT RADIUM HOUSE</h1>
+  <p>Premium Signage & Number Plate Experts</p>
+</header>
+
+<section class="hero">
+  <h2>Enhancing Visibility with Quality Signage</h2>
+  <p>Professional signage and number plates designed for durability, visibility, and modern appearance.</p>
+  <a class="btn" href="tel:8374879845">Get Your Quote</a>
+</section>
+
+<h2 class="section-title">Our Services</h2>
+<div class="grid">
+  <div class="card"><i class="fa-solid fa-car"></i>Vehicle Number Plates – Strong and stylish plates designed for long-term use.</div>
+  <div class="card"><i class="fa-solid fa-house"></i>Name Plates – Custom-designed plates for homes, offices, and businesses.</div>
+  <div class="card"><i class="fa-solid fa-billboard"></i>Flex Sign Boards – High-impact advertising boards for outdoor branding.</div>
+  <div class="card"><i class="fa-solid fa-lightbulb"></i>Glow Signs – Bright illuminated boards ensuring visibility at night.</div>
+  <div class="card"><i class="fa-solid fa-star"></i>Radium Signs – Reflective signage for safety and professional branding.</div>
+  <div class="card"><i class="fa-solid fa-window-maximize"></i>Glass Film Fitting – Privacy and heat-control films for better comfort.</div>
+</div>
+
+<section class="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p>📍 SUSHANT RADIUM HOUSE, KING KOTI, HYDERABAD</p>
+  <p>📞 83748 79845</p>
+  <a class="btn" href="tel:8374879845">Call Now</a>
+</section>
+
+<section class="form">
+  <h2 class="section-title">Send Enquiry</h2>
+  <input type="text" placeholder="Your Name" required>
+  <input type="text" placeholder="Phone Number" required>
+  <textarea placeholder="Your Requirement" required></textarea>
+  <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+</section>
+
+<a class="book" href="tel:8374879845">Book Now</a>
+<a class="whatsapp" href="https://wa.me/918374879845">💬</a>
+
+<script>
+function sendWhatsApp(){
+  let name=document.querySelectorAll("input")[0].value;
+  let phone=document.querySelectorAll("input")[1].value;
+  let msg=document.querySelector("textarea").value;
+
+  if(!name || !phone || !msg){
+    alert("Please fill all fields!");
+    return;
+  }
+
+  let url="https://wa.me/918374879845?text="
+  +"Name: "+encodeURIComponent(name)+"%0a"
+  +"Phone: "+encodeURIComponent(phone)+"%0a"
+  +"Requirement: "+encodeURIComponent(msg);
+
+  window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
